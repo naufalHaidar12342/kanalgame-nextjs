@@ -1,9 +1,9 @@
-import Sidebar from "../components/Sidebar";
-import NavBar from "../components/NavigationBar";
+import NavigationDesktop from "../components/NavigationDesktop";
+
 export default function Home() {
-  return (
-    <div>
-      <NavBar />
-    </div>
-  );
+	return (
+		<div>
+			<NavigationDesktop />
+		</div>
+	);
 }
