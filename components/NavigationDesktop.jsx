@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MdClose, MdMenu } from "react-icons/md";
 import { useState } from "react";
+import { listOfMenu } from "../utils/list-of-menu";
 
 export default function NavigationDesktop() {
 	const [navOpen, setNavOpen] = useState(true);
@@ -20,7 +21,7 @@ export default function NavigationDesktop() {
 								navOpen ? "" : "hidden"
 							}`}
 						>
-							{data.map((item, index) => (
+							{listOfMenu.map((item, index) => (
 								<li
 									id={item.label}
 									className="lg:mx-1 px-5 py-2 lg:hover:bg-Keppel lg:hover:text-white rounded"
@@ -51,18 +52,3 @@ export default function NavigationDesktop() {
 		</div>
 	);
 }
-
-const data = [
-	{
-		label: "Home",
-		path: "/",
-	},
-	{
-		label: "My Projects",
-		path: "/my-projects",
-	},
-	{
-		label: "Certifications",
-		path: "/my-certifications",
-	},
-];

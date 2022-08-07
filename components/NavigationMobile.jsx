@@ -1,4 +1,10 @@
+import Link from "next/link";
+import { MdClose, MdMenu } from "react-icons/md";
+import { useState } from "react";
+import { listOfMenu } from "../utils/list-of-menu";
 export default function NavigationMobile() {
+	const [navOpen, setNavOpen] = useState(true);
+
 	return (
 		<div className="w-full h-full fixed top-0">
 			<nav
@@ -10,7 +16,7 @@ export default function NavigationMobile() {
 							id="list-of-options"
 							className={`flex flex-col px-6  ${navOpen ? "" : "hidden"}`}
 						>
-							{data.map((item, index) => (
+							{listOfMenu.map((item, index) => (
 								<li id={item.label} className=" px-5 py-2  rounded" key={index}>
 									<Link href={item.path}>
 										<a>{item.label}</a>
@@ -37,18 +43,3 @@ export default function NavigationMobile() {
 		</div>
 	);
 }
-
-const data = [
-	{
-		label: "Home",
-		path: "/",
-	},
-	{
-		label: "My Projects",
-		path: "/my-projects",
-	},
-	{
-		label: "Certifications",
-		path: "/my-certifications",
-	},
-];
