@@ -9,6 +9,6 @@ export const listOfMenu = [
 	},
 	{
 		label: "Certifications",
-		path: "/my-certifications",
+		path: "/my-certification",
 	},
 ];
