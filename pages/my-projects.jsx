@@ -1,3 +1,5 @@
+import { projectList } from "../utils/list-of-projects";
+import "tw-elements";
 export default function MyProjects() {
 	return (
 		<div className="container flex">
@@ -29,45 +31,22 @@ export default function MyProjects() {
 					></button>
 				</div>
 				<div class="carousel-inner relative w-full overflow-hidden">
-					<div class="carousel-item active relative float-left w-full">
-						<img
-							src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-							class="block w-full"
-							alt="..."
-						/>
-						<div class="carousel-caption hidden md:block absolute text-center">
-							<h5 class="text-xl">First slide label</h5>
-							<p>
-								Some representative placeholder content for the first slide.
-							</p>
+					{projectList.map((carouselItem, carouselIndex) => (
+						<div
+							class="carousel-item active relative float-left w-full"
+							key={carouselIndex}
+						>
+							<img
+								src={carouselItem.image}
+								class="block w-full"
+								alt={carouselItem.imageAltText}
+							/>
+							<div class="carousel-caption hidden md:block absolute text-center">
+								<h5 class="text-xl">{carouselItem.appName}</h5>
+								<p>{carouselItem.shortDesc}</p>
+							</div>
 						</div>
-					</div>
-					<div class="carousel-item relative float-left w-full">
-						<img
-							src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-							class="block w-full"
-							alt="..."
-						/>
-						<div class="carousel-caption hidden md:block absolute text-center">
-							<h5 class="text-xl">Second slide label</h5>
-							<p>
-								Some representative placeholder content for the second slide.
-							</p>
-						</div>
-					</div>
-					<div class="carousel-item relative float-left w-full">
-						<img
-							src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-							class="block w-full"
-							alt="..."
-						/>
-						<div class="carousel-caption hidden md:block absolute text-center">
-							<h5 class="text-xl">Third slide label</h5>
-							<p>
-								Some representative placeholder content for the third slide.
-							</p>
-						</div>
-					</div>
+					))}
 				</div>
 				<button
 					class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
