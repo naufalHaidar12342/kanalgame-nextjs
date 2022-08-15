@@ -5,7 +5,7 @@ export default function Layout({ children }) {
 	return (
 		<div>
 			<NavigationDesktop />
-			<main>{children}</main>
+			<main className="mt-16">{children}</main>
 		</div>
 	);
 }

@@ -7,7 +7,7 @@ export default function NavigationDesktop() {
 	const [navOpen, setNavOpen] = useState(true);
 
 	return (
-		<div className="w-full h-full fixed top-0">
+		<div className="w-full h-16 fixed top-0">
 			<nav
 				className={` h-full bg-black bg-opacity-80 lg:bg-opacity-0 lg:h-auto ${
 					navOpen ? "" : "hidden"

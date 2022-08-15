@@ -1,78 +1,58 @@
 import { projectList } from "../utils/list-of-projects";
-import "tw-elements";
+import { useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 export default function MyProjects() {
+	const [emblaRef, emblaApi] = useEmblaCarousel();
+
+	const scrollPrev = useCallback(() => {
+		if (emblaApi) emblaApi.scrollPrev();
+	}, [emblaApi]);
+	const scrollNext = useCallback(() => {
+		if (emblaApi) emblaApi.scrollNext();
+	}, [emblaApi]);
+
 	return (
-		<div className="container flex">
-			<div
-				id="carouselExampleCaptions"
-				class="carousel slide relative"
-				data-bs-ride="carousel"
-			>
-				<div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-					<button
-						type="button"
-						data-bs-target="#carouselExampleCaptions"
-						data-bs-slide-to="0"
-						class="active"
-						aria-current="true"
-						aria-label="Slide 1"
-					></button>
-					<button
-						type="button"
-						data-bs-target="#carouselExampleCaptions"
-						data-bs-slide-to="1"
-						aria-label="Slide 2"
-					></button>
-					<button
-						type="button"
-						data-bs-target="#carouselExampleCaptions"
-						data-bs-slide-to="2"
-						aria-label="Slide 3"
-					></button>
-				</div>
-				<div class="carousel-inner relative w-full overflow-hidden">
-					{projectList.map((carouselItem, carouselIndex) => (
-						<div
-							class="carousel-item active relative float-left w-full"
-							key={carouselIndex}
-						>
+		<div className="container flex mx-auto">
+			<div className="embla relative flex items-center" ref={emblaRef}>
+				<div className="embla__container">
+					{projectList.map((item, index) => (
+						<div className="embla__slide flex justify-center">
 							<img
-								src={carouselItem.image}
-								class="block w-full"
-								alt={carouselItem.imageAltText}
+								src={item.image}
+								alt=""
+								loading="lazy"
+								className="w-full object-cover"
 							/>
-							<div class="carousel-caption hidden md:block absolute text-center">
-								<h5 class="text-xl">{carouselItem.appName}</h5>
-								<p>{carouselItem.shortDesc}</p>
+							<div className="absolute bottom-5 text-center text-white w-full">
+								<h4>{item.appName}</h4>
+								<p className="w-full">{item.shortDesc}</p>
 							</div>
 						</div>
 					))}
 				</div>
-				<button
-					class="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-					type="button"
-					data-bs-target="#carouselExampleCaptions"
-					data-bs-slide="prev"
-				>
-					<span
-						class="carousel-control-prev-icon inline-block bg-no-repeat"
-						aria-hidden="true"
-					></span>
-					<span class="visually-hidden">Previous</span>
+				<button className="embla__prev absolute left-5" onClick={scrollPrev}>
+					<MdNavigateBefore className="text-white text-6xl" />
 				</button>
-				<button
-					class="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-					type="button"
-					data-bs-target="#carouselExampleCaptions"
-					data-bs-slide="next"
-				>
-					<span
-						class="carousel-control-next-icon inline-block bg-no-repeat"
-						aria-hidden="true"
-					></span>
-					<span class="visually-hidden">Next</span>
+				<button className="embla__next absolute right-5" onClick={scrollNext}>
+					<MdNavigateNext className="text-white text-6xl" />
 				</button>
 			</div>
+			<style jsx>{`
+				.embla {
+					overflow: hidden;
+				}
+				.embla__container {
+					display: flex;
+				}
+				.embla__slide {
+					flex: 0 0 100%;
+				}
+				@media (min-width: 768px) {
+					.embla__slide {
+					  flex: 0 0 50%; /* Breakpoint SM slide covers 50% of the viewport */
+					}
+			`}</style>
 		</div>
 	);
 }
