@@ -13,7 +13,7 @@ export default function MyProjects() {
 	}, [emblaApi]);
 
 	return (
-		<div className="container flex mx-auto">
+		<div className="flex mx-auto">
 			<div className="embla relative flex items-center" ref={emblaRef}>
 				<div className="embla__container">
 					{projectList.map((item, index) => (
@@ -48,10 +48,6 @@ export default function MyProjects() {
 				.embla__slide {
 					flex: 0 0 100%;
 				}
-				@media (min-width: 768px) {
-					.embla__slide {
-					  flex: 0 0 50%; /* Breakpoint SM slide covers 50% of the viewport */
-					}
 			`}</style>
 		</div>
 	);
