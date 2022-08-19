@@ -1,10 +1,13 @@
 import Layout from "../components/Layout";
-import { useState, useEffect } from "react";
 export default function Home() {
-	const [mobile, setMobile] = useState(() => {});
 	return (
 		<div>
 			<Layout />
+			<div className="flex flex-col">
+				<li>aa</li>
+				<li>aa</li>
+				<li>aa</li>
+			</div>
 		</div>
 	);
 }
