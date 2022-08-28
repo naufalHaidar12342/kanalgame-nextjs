@@ -1,0 +1,37 @@
+[
+	{
+		"certificateName": "Belajar Pengembangan Android Intermediate",
+		"certificateImg": "/certificate/Sertifikat-Android-Intermediate-Dicoding_Part1-1.png",
+		"certificateIssuer": "Dicoding"
+	},
+	{
+		"certificateName": "Belajar Fundamental Aplikasi Android",
+		"certificateImg": "/certificate/Sertifikat-Android-Fundamental-1.png",
+		"certificateIssuer": "Dicoding"
+	},
+	{
+		"certificateName": "Belajar Dasar UX Design",
+		"certificateImg": "/certificate/Sertifikat-Belajar-UX-Design-1.png",
+		"certificateIssuer": "Dicoding"
+	},
+	{
+		"certificateName": "Belajar Dasar Git dan GitHub",
+		"certificateImg": "/certificate/Sertifikat-Belajar-Git-Github-1.png",
+		"certificateIssuer": "Dicoding"
+	},
+	{
+		"certificateName": "Memulai Pemrograman Dengan Kotlin",
+		"certificateImg": "/certificate/Sertifikat-Pemrograman-Kotlin-1.png",
+		"certificateIssuer": "Dicoding"
+	},
+	{
+		"certificateName": "Pengenalan ke Logika Pemrograman",
+		"certificateImg": "/certificate/Sertifikat-Pengenalan-Logika-Pemrograman-1.png",
+		"certificateIssuer": "Dicoding"
+	},
+	{
+		"certificateName": "Belajar Prinsip Pemrograman SOLID",
+		"certificateImg": "/certificate/Sertifikat-Prinsip-SOLID-1.png",
+		"certificateIssuer": "Dicoding"
+	}
+]

@@ -1,0 +1,38 @@
+[
+	{
+		"project_name": "Kuliner Semarang",
+		"project_platform_logo": "/images/Android_robot.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/kuliner-semarang",
+		"project_short_desc": "Daftar makanan yang bersifat statis khas Kota Semarang, Jawa Tengah. "
+	},
+	{
+		"project_name": "Kamus Istilah Hukum",
+		"project_platform_logo": "/images/Android_robot.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/kamus-istilah-hukum",
+		"project_short_desc": "Aplikasi dengan fungsi CRUD untuk menampilkan penjelasan sederhana dari istilah hukum yang sering dijumpai sehari-hari."
+	},
+	{
+		"project_name": "Discover Github API",
+		"project_platform_logo": "/images/Android_robot.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/Discover-Github-API",
+		"project_short_desc": "Melihat informasi pengguna Github lewat aplikasi berbasis Android. Menggunakan GitHub API."
+	},
+	{
+		"project_name": "Story App Dicoding",
+		"project_platform_logo": "/images/Android_robot.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/Story-App-Submission-Intermediate",
+		"project_short_desc": "Berbagi cerita dilengkapi gambar dan lokasi kita menggunakan Story API Dicoding."
+	},
+	{
+		"project_name": "Github User",
+		"project_platform_logo": "/images/Android_robot.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/github-static-user-app",
+		"project_short_desc": "Melihat informasi pengguna Github lewat aplikasi berbasis Android. Data masih bersifat statis, menggunakan XML."
+	},
+	{
+		"project_name": "NextJS Eid Fitr",
+		"project_platform_logo": "/images/internet_logo.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/nextjs-eid-fitri",
+		"project_short_desc": "Iseng belajar NextJS dengan API pada hari raya Idul Fitri 2022"
+	}
+]

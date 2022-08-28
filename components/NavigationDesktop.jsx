@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MdClose, MdMenu } from "react-icons/md";
 import { useState } from "react";
-import { listOfMenu } from "../utils/list-of-menu";
+import listOfMenu from "../data/list-of-menu.json";
 
 export default function NavigationDesktop() {
 	const [navOpen, setNavOpen] = useState(true);
