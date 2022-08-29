@@ -1,0 +1,26 @@
+[
+	{
+		"post_title": "Grow with Google (Bangkit) Experience",
+		"post_illustration": "/my-post-illustration/bangkit-logo.png",
+		"post_short_desc": "This is my story during Bangkit 2022 by Google, GoTo, Traveloka program ",
+		"post_body": "lorem"
+	},
+	{
+		"post_title": "Kotlin + Android Studio Combo",
+		"post_illustration": "/my-post-illustration/kotlin-hero.svg",
+		"post_short_desc": " 5 months and counting, using Kotlin in Android development. I don't wanna touch Java again 😂",
+		"post_body": ""
+	},
+	{
+		"post_title": "Upgrading my SSD",
+		"post_illustration": "/my-post-illustration/nm620_1TB.png",
+		"post_short_desc": "Upgrading my boot drive from 256 GB to 1TB. Dayum that was big leap!",
+		"post_body": ""
+	},
+	{
+		"post_title": "Kuva Bramma/Tenet Envoy, my go-to portable nuclear missile in Warframe 😎",
+		"post_illustration": "/my-post-illustration/Warframe.webp",
+		"post_short_desc": "Equip the nuke launcher, wear your sun glassess, and pres left-click on your mouse",
+		"post_body": ""
+	}
+]

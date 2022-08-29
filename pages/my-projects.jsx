@@ -11,7 +11,7 @@ export default function MyProjects() {
 			<div className="grid grid-cols-2 gap-5 max-w-6xl mx-auto py-5">
 				{projectList.map((project, projectIndex) => (
 					<div
-						className="hover:bg-Keppel hover:text-white hover:rounded p-4 flex group"
+						className="hover:bg-Keppel hover:text-white hover:rounded-2xl p-4 flex group"
 						key={projectIndex}
 					>
 						<div id="project-repository-logo">

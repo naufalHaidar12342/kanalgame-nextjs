@@ -4,6 +4,7 @@ import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Image from "next/image";
 import certificateList from "../data/list-of-certificate.json";
 import Layout from "../components/Layout";
+
 export default function MyCertifications() {
 	const [emblaRef, emblaApi] = useEmblaCarousel();
 
