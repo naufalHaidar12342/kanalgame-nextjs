@@ -33,5 +33,10 @@
 		"certificateName": "Belajar Prinsip Pemrograman SOLID",
 		"certificateImg": "/certificate/Sertifikat-Prinsip-SOLID-1.png",
 		"certificateIssuer": "Dicoding"
+	},
+	{
+		"certificateName": "Bangkit 2022 Graduate Mobile Development Learning Path",
+		"certificateImg": "/certificate/Bangkit-Graduate-Certificate-42.jpg",
+		"certificateIssuer": "PT. Presentologics"
 	}
 ]
