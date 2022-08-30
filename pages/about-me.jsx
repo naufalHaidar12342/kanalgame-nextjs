@@ -1,9 +1,9 @@
 import Link from "next/link";
-
+import Layout from "../components/Layout";
 export default function AboutMe() {
 	return (
-		<div className="container">
+		<Layout title="About Me">
 			<div></div>
-		</div>
+		</Layout>
 	);
 }

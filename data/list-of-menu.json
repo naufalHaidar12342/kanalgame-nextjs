@@ -10,5 +10,9 @@
 	{
 		"label": "Certifications",
 		"path": "/my-certification"
+	},
+	{
+		"label": "About",
+		"path": "/about-me"
 	}
 ]

@@ -34,5 +34,17 @@
 		"project_platform_logo": "/images/internet_logo.svg",
 		"link_repo": "https://github.com/naufalHaidar12342/nextjs-eid-fitri",
 		"project_short_desc": "Iseng belajar NextJS dengan API pada hari raya Idul Fitri 2022"
+	},
+	{
+		"project_name": "Biodata Pribadi",
+		"project_platform_logo": "/images/Android_robot.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/aplikasi-biodata-android",
+		"project_short_desc": "Aplikasi awal saya dalam belajar Android development dengan Android Studio dan Java"
+	},
+	{
+		"project_name": "Submission Pemrograman Kotlin by Dicoding Indonesia",
+		"project_platform_logo": "/images/Android_robot.svg",
+		"link_repo": "https://github.com/naufalHaidar12342/dicoding-submission-pemrogramankotlin",
+		"project_short_desc": "Submission akhir untuk kelas Memulai Pemrograman Dengan Kotlin, disediakan oleh Dicoding Indonesia"
 	}
 ]
