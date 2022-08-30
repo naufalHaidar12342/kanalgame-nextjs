@@ -7,8 +7,8 @@ export default function Footer() {
 		<div className="bg-HunterGreen">
 			<footer className="flex flex-wrap items-center justify-between p-3 m-auto h-full">
 				<div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
-					<ul class="flex mx-auto text-white text-center">
-						<li class="p-2 cursor-pointer hover:underline">
+					<ul className="flex mx-auto text-white text-center">
+						<li className="p-2 cursor-pointer hover:underline">
 							Hit me up on these platform:
 						</li>
 					</ul>
