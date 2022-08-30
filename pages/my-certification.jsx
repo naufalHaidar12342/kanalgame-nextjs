@@ -1,12 +1,15 @@
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Image from "next/image";
 import certificateList from "../data/list-of-certificate.json";
 import Layout from "../components/Layout";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function MyCertifications() {
-	const [emblaRef, emblaApi] = useEmblaCarousel();
+	const autoPlay = useRef(Autoplay({}, (emblaRoot) => emblaRoot.parentElement));
+	const options = { delay: 1000 };
+	const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoPlay.current]);
 
 	const scrollPrev = useCallback(() => {
 		if (emblaApi) emblaApi.scrollPrev();
@@ -37,7 +40,7 @@ export default function MyCertifications() {
 								className="embla__slide flex justify-center w-full"
 								key={index}
 							>
-								<div className=" w-full h-[800px] relative">
+								<div className=" w-full h-[770px] relative">
 									<Image
 										src={item.certificateImg}
 										layout="fill"

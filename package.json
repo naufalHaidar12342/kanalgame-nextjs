@@ -11,6 +11,7 @@
   "dependencies": {
     "@pdftron/webviewer": "^8.7.0",
     "@popperjs/core": "^2.11.5",
+    "date-fns": "^2.29.2",
     "embla-carousel-autoplay": "^7.0.1",
     "embla-carousel-react": "^7.0.0",
     "next": "12.2.4",

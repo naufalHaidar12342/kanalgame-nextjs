@@ -24,7 +24,7 @@ export default function NavigationDesktop() {
 							{listOfMenu.map((item, index) => (
 								<li
 									id={item.label}
-									className="lg:mx-1 px-5 py-2 lg:hover:bg-Keppel lg:hover:text-white rounded-2xl"
+									className="lg:mx-1 px-5 py-2 lg:hover:bg-Keppel lg:hover:text-white rounded-2xl font-semibold"
 									key={index}
 								>
 									<Link href={item.path}>
