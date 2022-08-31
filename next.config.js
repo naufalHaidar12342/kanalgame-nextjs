@@ -4,6 +4,7 @@ const nextConfig = {
 	swcMinify: true,
 	images: {
 		domains: ["media.graphassets.com"],
+		dangerouslyAllowSVG: true,
 	},
 };
 

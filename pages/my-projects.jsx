@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import { MdNavigateNext } from "react-icons/md";
 import { BsSignpostFill } from "react-icons/bs";
+import { GraphQLClient } from "graphql-request";
 export default function MyProjects() {
 	return (
 		<Layout title="My Projects">
@@ -50,4 +51,33 @@ export default function MyProjects() {
 			</div>
 		</Layout>
 	);
+}
+
+export async function getStaticProps() {
+	const client = new GraphQLClient(
+		"https://api-ap-southeast-2.hygraph.com/v2/cl7gawkjl7suf01uhdrd42szp/master"
+	);
+	const { posts } = await client.request(
+		`
+		{
+			posts(orderBy: id_ASC) {
+				id
+				title
+				publishedAt
+				slug
+				tags
+				excerpt
+				coverImage {
+					url
+				}
+			}
+		}
+		`
+	);
+
+	return {
+		props: {
+			posts,
+		},
+	};
 }
