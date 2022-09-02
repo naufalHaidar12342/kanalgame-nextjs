@@ -2,11 +2,10 @@ import { useCallback, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import Image from "next/image";
-import certificateList from "../data/list-of-certificate.json";
 import Layout from "../components/Layout";
 import Autoplay from "embla-carousel-autoplay";
-
-export default function MyCertifications() {
+import { GraphQLClient } from "graphql-request";
+export default function MyCertifications({ certificates }) {
 	const autoPlay = useRef(Autoplay({}, (emblaRoot) => emblaRoot.parentElement));
 	const options = { delay: 1000 };
 	const [emblaRef, emblaApi] = useEmblaCarousel(options, [autoPlay.current]);
@@ -35,14 +34,14 @@ export default function MyCertifications() {
 					ref={emblaRef}
 				>
 					<div className="embla__container  w-full">
-						{certificateList.map((item, index) => (
+						{certificates.map((certificate, index) => (
 							<div
 								className="embla__slide flex justify-center w-full"
 								key={index}
 							>
 								<div className=" w-full h-[770px] relative">
 									<Image
-										src={item.certificateImg}
+										src={certificate.certificateImage.url}
 										layout="fill"
 										objectFit="contain"
 									/>
@@ -118,4 +117,28 @@ export default function MyCertifications() {
 			</div>
 		</Layout>
 	);
+}
+
+export async function getStaticProps() {
+	const client = new GraphQLClient(
+		"https://api-ap-southeast-2.hygraph.com/v2/cl7gawkjl7suf01uhdrd42szp/master"
+	);
+	const { certificates } = await client.request(
+		`
+		{
+			certificates(orderBy: publishedAt_ASC) {
+				certificateName
+				certificateImage {
+					url
+				}
+			}
+		}
+		`
+	);
+
+	return {
+		props: {
+			certificates,
+		},
+	};
 }

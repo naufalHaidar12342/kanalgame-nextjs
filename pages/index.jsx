@@ -5,11 +5,17 @@ import { AiOutlineRead } from "react-icons/ai";
 import { BsSignpostFill } from "react-icons/bs";
 import { GraphQLClient } from "graphql-request";
 import { id } from "date-fns/locale";
-import { format, getDay } from "date-fns";
+import { format } from "date-fns";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
 export default function Home({ posts }) {
 	const formattedDatePattern = "dd MMMM yyyy HH:mm OOOO";
-	const todayDatePattern = "EEEE, dd MMMM yyyy HH:mm";
-	let todayDateIndonesia = format(new Date(), todayDatePattern, { locale: id });
+	const todayDatePattern = "EEEE, dd MMMM yyyy HH:mm:ss";
+	const DynamicTodayDate = dynamic(
+		() => import("../components/TodayDateIndonesia"),
+		{ suspense: true }
+	);
 	return (
 		<Layout title="Home">
 			<div className="min-h-screen mx-5 my-5">
@@ -23,7 +29,9 @@ export default function Home({ posts }) {
 							<p className="text-lg italic font-normal">
 								Updated if I have spare time, of course.
 							</p>
-							<p> Today is {todayDateIndonesia} in Indonesia</p>
+							<Suspense fallback={"Loading today date in Indonesia..."}>
+								<DynamicTodayDate />
+							</Suspense>
 						</div>
 					</div>
 				</div>

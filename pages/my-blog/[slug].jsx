@@ -12,15 +12,15 @@ export default function Blog({ post }) {
 		formattedDatePattern,
 		{ locale: id }
 	);
-	console.log(formattedDate);
 	return (
 		<Layout title={post.title}>
-			<div className="min-h-screen pt-5">
-				<div className="flex flex-col justify-center items-center ">
+			<div className="min-h-screen pt-5 max-w-screen-md mx-auto">
+				<div className="flex flex-col justify-center ">
 					<h2 className="font-bold text-4xl mt-5">{post.title}</h2>
+					<h4 className="font-light mt-2">{post.excerpt}</h4>
 					<div className="flex">
 						<div
-							className="w-32 h-32 relative rounded-full overflow-auto mt-4"
+							className="w-16 h-16 relative rounded-full overflow-auto mt-4"
 							id="Author section"
 						>
 							<Image
@@ -29,10 +29,18 @@ export default function Blog({ post }) {
 								objectFit="contain"
 							/>
 						</div>
-						<div className="mx-auto my-auto items-center p-4">
+						<div className="justify-start my-auto p-4">
 							<h4 className="text-lg font-medium">{post.author.name}</h4>
 							<p className="font-light">{formattedDate}</p>
 						</div>
+					</div>
+
+					<div className="w-32 h-32 relative mx-auto">
+						<Image
+							src={post.coverImage.url}
+							layout="fill"
+							objectFit="contain"
+						/>
 					</div>
 
 					<ReactMarkdown>{post.content.markdown}</ReactMarkdown>
@@ -60,6 +68,7 @@ export async function getStaticProps({ params: { slug } }) {
 				publishedAt
 				slug
 				tags
+				excerpt
 				coverImage {
 					url
 				}
@@ -76,8 +85,6 @@ export async function getStaticProps({ params: { slug } }) {
 		}
 		`
 	);
-
-	console.log(post);
 
 	return {
 		props: {
