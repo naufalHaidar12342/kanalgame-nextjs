@@ -6,18 +6,27 @@ import { id } from "date-fns/locale";
 import { format } from "date-fns";
 
 export default function Blog({ post }) {
-	const formattedDatePattern = "dd MMMM yyyy HH:mm OOOO";
-	const formattedDate = format(
-		new Date(post.publishedAt),
-		formattedDatePattern,
-		{ locale: id }
-	);
+	const formattedDatePattern = "dd MMMM yyyy HH:mm ";
+	const formattedDate = format(new Date(post.createdAt), formattedDatePattern, {
+		locale: id,
+	});
 	return (
 		<Layout title={post.title}>
-			<div className="min-h-screen pt-5 max-w-screen-md mx-auto">
-				<div className="flex flex-col justify-center ">
+			<div className="min-h-screen pt-5 max-w-screen-lg mx-auto">
+				<div className="flex flex-col justify-center mx-10">
 					<h2 className="font-bold text-4xl mt-5">{post.title}</h2>
-					<h4 className="font-light mt-2">{post.excerpt}</h4>
+					<h4 className="font-semibold mt-2 text-slate-600 text-xl">
+						{post.excerpt}
+					</h4>
+					<ul>
+						{post.tags.map((postTags, indexTags) => (
+							<li className="py-2 inline-block" key={indexTags}>
+								<button className="mx-2 py-2 px-3 bg-slate-600 rounded-2xl font-medium text-white">
+									{postTags}
+								</button>
+							</li>
+						))}
+					</ul>
 					<div className="flex">
 						<div
 							className="w-16 h-16 relative rounded-full overflow-auto mt-4"
@@ -31,11 +40,11 @@ export default function Blog({ post }) {
 						</div>
 						<div className="justify-start my-auto p-4">
 							<h4 className="text-lg font-medium">{post.author.name}</h4>
-							<p className="font-light">{formattedDate}</p>
+							<h5 className="font-light">Posted at {formattedDate}Indonesia</h5>
 						</div>
 					</div>
 
-					<div className="w-32 h-32 relative mx-auto">
+					<div className="w-36 h-36 relative mx-auto">
 						<Image
 							src={post.coverImage.url}
 							layout="fill"
@@ -51,6 +60,11 @@ export default function Blog({ post }) {
 					font-size: 30px;
 					font-weight: 600;
 				}
+				p {
+					margin-top: 16px;
+					margin-bottom: 16px;
+					line-height: 1rem;
+				}
 			`}</style>
 		</Layout>
 	);
@@ -65,6 +79,7 @@ export async function getStaticProps({ params: { slug } }) {
 		{
 			post(where: { slug: "${slug}" }) {
 				title
+				createdAt
 				publishedAt
 				slug
 				tags

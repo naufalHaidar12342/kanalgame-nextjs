@@ -10,11 +10,12 @@ export default function AboutMe() {
 		<Layout title="About Me">
 			<div className="min-h-screen">
 				<div className="flex flex-col justify-center items-center py-5">
-					<div className="w-80 h-80 relative rounded-full bg-AeroBlue overflow-hidden">
+					<div className="w-40 h-40 relative rounded-full bg-AeroBlue overflow-hidden">
 						<Image
-							src={"/images/Android_robot.svg"}
+							src={"/images/DSC_0491-resize.jpg"}
 							layout="fill"
 							objectFit="contain"
+							alt="My profile"
 						/>
 					</div>
 
@@ -23,7 +24,10 @@ export default function AboutMe() {
 					</h3>
 					<ul className="text-2xl flex flex-row mt-2">
 						<li className="mx-2">
-							<Link href={""} passHref={true}>
+							<Link
+								href={"https://github.com/naufalHaidar12342"}
+								passHref={true}
+							>
 								<a className="text-center ">
 									<GoOctoface className="inline-block mx-2" />
 									Github
@@ -31,13 +35,22 @@ export default function AboutMe() {
 							</Link>
 						</li>
 						<li className="mx-2">
-							<Link href={""} passHref={true}>
-								<a>LinkedIn</a>
+							<Link
+								href={"https://www.linkedin.com/in/naufal-haidar-rauf/"}
+								passHref={true}
+							>
+								<a>
+									<IoLogoLinkedin className="inline-block mx-2" />
+									LinkedIn
+								</a>
 							</Link>
 						</li>
 						<li className="mx-2">
-							<Link href={""} passHref={true}>
-								<a>Telegram</a>
+							<Link href={"https://t.me/heydar12342"} passHref={true}>
+								<a>
+									<FaTelegramPlane className="inline-block mx-2" />
+									Telegram
+								</a>
 							</Link>
 						</li>
 					</ul>
@@ -48,7 +61,7 @@ export default function AboutMe() {
 								Mahasiswa
 							</li>
 							<li className="mx-2">
-								<MdOutlineAndroid className="inline-block text-center w-5 h-5" />{" "}
+								<MdOutlineAndroid className="inline-block text-center w-5 h-5" />
 								Android Developer
 							</li>
 							<li className="mx-2">
@@ -59,10 +72,19 @@ export default function AboutMe() {
 					</div>
 					<div className="rounded-2xl max-w-5xl shadow-lg mt-2 p-5">
 						<div>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-							ipsam inventore obcaecati, soluta commodi et? Cumque dolorum iure
-							facilis esse ullam ad unde, delectus deleniti distinctio? Quos
-							iste amet numquam?
+							<h5>
+								Final year Bachelor of Informatics Engineering/Computer Science
+								at Universitas Dian Nuswantoro. Loves to figure out technologies
+								used in website/app that piqued my interest.
+							</h5>
+						</div>
+					</div>
+					<div className="rounded-2xl max-w-5xl shadow-lg mt-2 p-5">
+						<div>
+							<h5>
+								1 year of experience in Android development, 6 months of
+								experience using Kotlin in Android development.
+							</h5>
 						</div>
 					</div>
 				</div>

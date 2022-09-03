@@ -34,16 +34,16 @@ export default function Footer() {
 							</Link>
 						</li>
 						<li className="p-2 cursor-pointer" id="Telegram profile">
-							<Link href={""} passHref={true}>
+							<Link href={"https://t.me/heydar12342"} passHref={true}>
 								<a target="_blank">
 									<FaTelegramPlane className="h-10 w-10" />
 								</a>
 							</Link>
 						</li>
 					</ul>
-					<ul className="flex mx-auto text-white text-center">
-						<li className="p-2 ">
-							Massive thanks to
+					<ul className="flex mx-auto text-white text-center flex-col">
+						<li className="p-1 ">
+							Co-authored by
 							<Link
 								href={"https://github.com/devardha"}
 								passHref={true}
@@ -51,7 +51,17 @@ export default function Footer() {
 							>
 								<a target={"_blank"}> devardha </a>
 							</Link>
-							for immense helps provided
+						</li>
+						<li className="p-1">
+							Check out his{" "}
+							<Link
+								href={"https://ardha.dev"}
+								passHref={true}
+								className="cursor-pointer"
+							>
+								<a target={"_blank"}>cool website</a>
+							</Link>
+							, too!
 						</li>
 					</ul>
 				</div>

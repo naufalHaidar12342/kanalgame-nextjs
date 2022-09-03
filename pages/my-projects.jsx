@@ -20,7 +20,7 @@ export default function MyProjects({ projects }) {
 						</div>
 					</div>
 				</div>
-				<div className="grid grid-cols-2 gap-5 max-w-6xl mx-auto py-5">
+				<div className="grid grid-cols-1 gap-5 max-w-6xl mx-auto py-5 md:grid-cols-2">
 					{projects.map((project, projectIndex) => {
 						return (
 							<div

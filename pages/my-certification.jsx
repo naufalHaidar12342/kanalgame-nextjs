@@ -28,92 +28,100 @@ export default function MyCertifications({ certificates }) {
 
 	return (
 		<Layout title="My Certificates">
-			<div className="flex mx-auto max-w-6xl">
-				<div
-					className="embla relative flex items-center  w-full"
-					ref={emblaRef}
-				>
-					<div className="embla__container  w-full">
-						{certificates.map((certificate, index) => (
-							<div
-								className="embla__slide flex justify-center w-full"
-								key={index}
-							>
-								<div className=" w-full h-[770px] relative">
-									<Image
-										src={certificate.certificateImage.url}
-										layout="fill"
-										objectFit="contain"
-									/>
-								</div>
+			<div className="min-h-screen ">
+				<div className="flex max-w-6xl mx-auto">
+					<div
+						className="embla relative flex items-center  w-full"
+						ref={emblaRef}
+					>
+						<div className="embla__container  w-full">
+							{certificates.map((certificate, index) => (
+								<div
+									className="embla__slide flex justify-center w-full"
+									key={index}
+								>
+									<div className=" w-full h-[1000px] relative">
+										<Image
+											src={certificate.certificateImage.url}
+											layout="fill"
+											objectFit="contain"
+										/>
+									</div>
 
-								<div className="absolute bottom-5 w-full">
-									<div className="embla__dots">
-										{scrollSnaps.map((_, index) => (
-											<DotButton
-												key={index}
-												selected={index === selectedIndex}
-												onClick={() => scrollTo(index)}
-											/>
-										))}
+									<div className="absolute bottom-5 w-full">
+										<div className="embla__dots">
+											{scrollSnaps.map((_, index) => (
+												<DotButton
+													key={index}
+													selected={index === selectedIndex}
+													onClick={() => scrollTo(index)}
+												/>
+											))}
+										</div>
 									</div>
 								</div>
-							</div>
-						))}
+							))}
+						</div>
+						<button
+							className="embla__prev absolute left-5"
+							onClick={scrollPrev}
+						>
+							<MdNavigateBefore className="text-black text-6xl" />
+						</button>
+						<button
+							className="embla__next absolute right-5"
+							onClick={scrollNext}
+						>
+							<MdNavigateNext className="text-black text-6xl" />
+						</button>
 					</div>
-					<button className="embla__prev absolute left-5" onClick={scrollPrev}>
-						<MdNavigateBefore className="text-black text-6xl" />
-					</button>
-					<button className="embla__next absolute right-5" onClick={scrollNext}>
-						<MdNavigateNext className="text-black text-6xl" />
-					</button>
+
+					<style jsx>{`
+						.embla {
+							overflow: hidden;
+						}
+						.embla__container {
+							display: flex;
+						}
+						.embla__slide {
+							flex: 0 0 100%;
+						}
+						.embla__dots {
+							display: flex;
+							list-style: none;
+							justify-content: center;
+							padding-top: 10px;
+						}
+
+						.embla__dot {
+							background-color: transparent;
+							cursor: pointer;
+							position: relative;
+							padding: 0;
+							outline: 0;
+							border: 0;
+							width: 30px;
+							height: 30px;
+							margin-right: 7.5px;
+							margin-left: 7.5px;
+							display: flex;
+							align-items: center;
+						}
+
+						.embla__dot:after {
+							background-color: #efefef;
+							width: 100%;
+							height: 4px;
+							border-radius: 2px;
+							content: "";
+						}
+
+						.embla__dot.is-selected:after {
+							background-color: #1bcacd;
+							opacity: 1;
+						}
+					`}</style>
 				</div>
-
-				<style jsx>{`
-					.embla {
-						overflow: hidden;
-					}
-					.embla__container {
-						display: flex;
-					}
-					.embla__slide {
-						flex: 0 0 100%;
-					}
-					.embla__dots {
-						display: flex;
-						list-style: none;
-						justify-content: center;
-						padding-top: 10px;
-					}
-
-					.embla__dot {
-						background-color: transparent;
-						cursor: pointer;
-						position: relative;
-						padding: 0;
-						outline: 0;
-						border: 0;
-						width: 30px;
-						height: 30px;
-						margin-right: 7.5px;
-						margin-left: 7.5px;
-						display: flex;
-						align-items: center;
-					}
-
-					.embla__dot:after {
-						background-color: #efefef;
-						width: 100%;
-						height: 4px;
-						border-radius: 2px;
-						content: "";
-					}
-
-					.embla__dot.is-selected:after {
-						background-color: #1bcacd;
-						opacity: 1;
-					}
-				`}</style>
 			</div>
 		</Layout>
 	);
