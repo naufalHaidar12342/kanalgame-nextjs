@@ -5,9 +5,7 @@ import { GoOctoface } from "react-icons/go";
 import { MdOutlineAndroid, MdSchool, MdGames } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaTelegramPlane } from "react-icons/fa";
-import { Disclosure, Transition } from "@headlessui/react";
-import { FcExpand } from "react-icons/fc";
-
+import SectionQnA from "../components/SectionQnA";
 export default function AboutMe() {
 	return (
 		<Layout title="About Me">
@@ -30,7 +28,7 @@ export default function AboutMe() {
 								href={"https://github.com/naufalHaidar12342"}
 								passHref={true}
 							>
-								<a className="text-center ">
+								<a className="text-center " target="_blank">
 									<GoOctoface className="inline-block mx-2" />
 									Github
 								</a>
@@ -41,7 +39,7 @@ export default function AboutMe() {
 								href={"https://www.linkedin.com/in/naufal-haidar-rauf/"}
 								passHref={true}
 							>
-								<a>
+								<a target="_blank">
 									<IoLogoLinkedin className="inline-block mx-2" />
 									LinkedIn
 								</a>
@@ -49,71 +47,37 @@ export default function AboutMe() {
 						</li>
 						<li className="mx-2">
 							<Link href={"https://t.me/heydar12342"} passHref={true}>
-								<a>
+								<a target="_blank">
 									<FaTelegramPlane className="inline-block mx-2" />
 									Telegram
 								</a>
 							</Link>
 						</li>
 					</ul>
-					<div
-						className=" rounded-2xl max-w-md shadow-lg mt-2 p-5 "
-						id="my-role"
-					>
-						<ul className="font-medium text-lg px-4 w-full">
-							<li className="mx-auto items-center">
-								<MdSchool className="inline-block text-center w-5 h-5" />
-								Mahasiswa
-							</li>
-							<li className="mx-auto items-center ">
-								<MdOutlineAndroid className="inline-block text-center w-5 h-5" />
-								Android Developer
-							</li>
-							<li className="mx-auto items-center">
-								<MdGames className="inline-block text-center w-5 h-5" /> Video
-								Game enjoyer
-							</li>
-						</ul>
-					</div>
-					<div className="mx-auto rounded-2xl bg-white p-2 max-w-lg my-5">
-						<Disclosure as={"div"} className="w-full">
-							{({ open }) => (
-								<>
-									<Disclosure.Button className="flex w-full justify-between rounded-lg bg-AeroBlue px-4 py-2 text-left text-lg font-medium text-Keppel hover:bg-green-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
-										<span>What is your refund policy?</span>
-										<FcExpand
-											className={`${
-												open ? "rotate-180 transform" : ""
-											} h-5 w-5 text-purple-500`}
-										/>
-									</Disclosure.Button>
 
-									<Transition
-										enter="transition duration-100 ease-out"
-										enterFrom="transform scale-95 opacity-0"
-										enterTo="transform scale-100 opacity-100"
-										leave="transition duration-75 ease-out"
-										leaveFrom="transform scale-100 opacity-100"
-										leaveTo="transform scale-95 opacity-0"
-									>
-										<Disclosure.Panel className="px-4 w-full pt-4 pb-2 text-lg text-gray-500 shadow-md rounded-lg">
-											If you're unhappy with your purchase for any reason, email
-											us within 90 days and we'll refund you in full, no
-											questions asked.
-										</Disclosure.Panel>
-									</Transition>
-								</>
-							)}
-						</Disclosure>
-						<div className="rounded-2xl shadow-lg mt-2 p-5">
-							<div>
-								<h5>
-									Final year Bachelor of Informatics Engineering/Computer
-									Science at Universitas Dian Nuswantoro. Loves to figure out
-									technologies used in website/app that piqued my interest.
-								</h5>
-							</div>
+					<div className="mx-auto rounded-2xl bg-white p-2 max-w-3xl my-5">
+						<div className="rounded-2xl shadow-lg mt-2 p-5 w-full">
+							<ul className="text-lg md:inline-flex items-center">
+								<li className="mx-2 p-2">
+									<h4>
+										<MdSchool className="inline-block w-6 h-6" /> Student
+									</h4>
+								</li>
+								<li className="mx-2 p-2">
+									<h4>
+										<MdOutlineAndroid className="inline-block w-6 h-6" />{" "}
+										Android Developer (in-progress)
+									</h4>
+								</li>
+								<li className="mx-2 p-2">
+									<h4>
+										<MdGames className="inline-block w-6 h-6" />
+										Casual video game enjoyer
+									</h4>
+								</li>
+							</ul>
 						</div>
+						<SectionQnA />
 					</div>
 				</div>
 			</div>
