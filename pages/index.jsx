@@ -18,7 +18,7 @@ export default function Home({ posts }) {
 		<Layout title="Home">
 			<div className="min-h-screen mx-5 my-5">
 				<div className="mx-auto max-w-5xl">
-					<div className="rounded-2xl shadow-xl flex py-6 " id="Home title">
+					<div className="rounded-2xl shadow-lg flex py-6 " id="Home title">
 						<div className="px-5 my-auto">
 							<h2 className="text-3xl font-semibold">
 								<BsSignpostFill className="inline-block items-center text-HunterGreen mx-2" />
@@ -29,7 +29,7 @@ export default function Home({ posts }) {
 							</p>
 						</div>
 					</div>
-					<div className="rounded-2xl flex py-6 shadow-xl max-w-xl mt-6">
+					<div className="rounded-2xl flex py-6 shadow-lg max-w-xl mt-6">
 						<div className="px-5 my-auto">
 							<Suspense fallback={"Loading today date in Indonesia..."}>
 								<DynamicTodayDate />
@@ -40,7 +40,7 @@ export default function Home({ posts }) {
 				<div className="grid grid-cols-1 gap-7 max-w-5xl mx-auto py-5">
 					{posts.map((blogPost, indexOfPost) => (
 						<div
-							className="rounded-2xl bg-Keppel  text-white hover:bg-white flex group p-4 shadow-xl"
+							className="rounded-2xl bg-Keppel  text-white hover:bg-white flex group p-4 shadow-2xl"
 							key={indexOfPost}
 						>
 							<div className="w-36 h-36 relative overflow-auto">

@@ -1,0 +1,18 @@
+[
+	{
+		"question": "Tell me about yourself in short.",
+		"answers": "Final year Bachelor of Informatics Engineering/Computer Science at Universitas Dian Nuswantoro. Loves to figure out technologies used in website/app that piqued my interest. Avid gamers mainly plays non-competitive title"
+	},
+	{
+		"question": "What is your focus of study right now ?",
+		"answer": "Mainly Android development that is Kotlin-based while learning web development on the side (Next.js, React)"
+	},
+	{
+		"question": "Are you open to work on project ?",
+		"answer": "Sure thing! "
+	},
+	{
+		"question": "Who is devardha, and what part he took in your website?",
+		"answer": "devardha is the GitHub username for my friend, Ardha Yudhatama. He is the one teaching me how to build this website using Next.js + Tailwind CSS + Graph CMS (Hygraph). You can say most of this website functionality run well thanks to his teaching. I'm the one who build the concept and pick the data. Currently, he (devardha) is working at VISKA"
+	}
+]
