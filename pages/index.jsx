@@ -52,21 +52,25 @@ export default function Home({ posts }) {
 								/>
 							</div>
 							<div className="px-5 my-auto group-hover:text-black">
-								<h4 className="mb-2 leading-6 font-semibold">
-									{blogPost.title}
-								</h4>
+								<div className="my-2">
+									<h3 className="leading-6 font-semibold text-xl">
+										{blogPost.title}
+									</h3>
+								</div>
+								<div className="my-2">
+									<ul className="">
+										{blogPost.tags.map((tagPost, index) => (
+											<li className=" py-2 inline-block mx-1 my-2" key={index}>
+												<a className="p-3 bg-white text-black rounded-xl group-hover:bg-slate-500 group-hover:text-slate-50 font-medium ">
+													{tagPost}
+												</a>
+											</li>
+										))}
+									</ul>
+								</div>
 								<PostCreatedDate posts={blogPost} />
+								<p className="font-medium text-lg mt-2">{blogPost.excerpt}</p>
 
-								<p className="font-medium">{blogPost.excerpt}</p>
-								<ul className="">
-									{blogPost.tags.map((tagPost, index) => (
-										<li className="text-black py-2 inline-block" key={index}>
-											<a className="mx-2 py-2 px-3 bg-white rounded-2xl group-hover:bg-slate-500 group-hover:text-slate-50 font-medium ">
-												{tagPost}
-											</a>
-										</li>
-									))}
-								</ul>
 								<div className="py-5">
 									<Link href={`/my-blog/${blogPost.slug}`} passHref={true}>
 										<a className="inline-block px-6 py-2 border-2 border-white text-white font-semibold text-sm leading-tight uppercase rounded-2xl focus:outline-none focus:ring-0 transition duration-150 ease-in-out  group-hover:text-slate-50 group-hover:font-semibold bg-slate-500">

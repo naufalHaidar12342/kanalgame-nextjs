@@ -57,23 +57,24 @@ export default function AboutMe() {
 
 					<div className="mx-auto rounded-2xl bg-white p-2 max-w-3xl my-5">
 						<div className="rounded-2xl shadow-lg mt-2 p-5 w-full">
-							<ul className="text-lg md:inline-flex items-center">
-								<li className="mx-2 p-2">
-									<h4>
-										<MdSchool className="inline-block w-6 h-6" /> Student
-									</h4>
+							<ul className="text-lg md:inline-flex justify-center w-full">
+								<li className="px-1 ">
+									<div className="inline-flex">
+										<MdSchool className=" w-8 h-8 mr-2" />
+										<h4>Student</h4>
+									</div>
 								</li>
-								<li className="mx-2 p-2">
-									<h4>
-										<MdOutlineAndroid className="inline-block w-6 h-6" />{" "}
-										Android Developer (in-progress)
-									</h4>
+								<li className="px-1">
+									<div className="inline-flex">
+										<MdOutlineAndroid className="w-8 h-8 mr-2" />
+										<h4>Android Developer (in-progress)</h4>
+									</div>
 								</li>
-								<li className="mx-2 p-2">
-									<h4>
-										<MdGames className="inline-block w-6 h-6" />
-										Casual video game enjoyer
-									</h4>
+								<li className="px-1">
+									<div className="inline-flex">
+										<MdGames className="w-8 h-8 mr-2" />
+										<h4>Casual video game enjoyer</h4>
+									</div>
 								</li>
 							</ul>
 						</div>
