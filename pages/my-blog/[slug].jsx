@@ -4,12 +4,22 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import { id } from "date-fns/locale";
 import { format } from "date-fns";
-
+import CodeHighlight from "../../components/react-markdown-custom-renderer/CodeHighlight";
 export default function Blog({ post }) {
 	const formattedDatePattern = "dd MMMM yyyy HH:mm ";
-	const formattedDate = format(new Date(post.createdAt), formattedDatePattern, {
-		locale: id,
-	});
+	const createdAtFormat = format(
+		new Date(post.createdAt),
+		formattedDatePattern,
+		{
+			locale: id,
+		}
+	);
+	const updatedAtFormat = format(
+		new Date(post.updatedAt),
+		formattedDatePattern,
+		{ locale: id }
+	);
+
 	return (
 		<Layout title={post.title}>
 			<div className="min-h-screen pt-5 max-w-screen-lg mx-auto">
@@ -21,7 +31,7 @@ export default function Blog({ post }) {
 					<ul>
 						{post.tags.map((postTags, indexTags) => (
 							<li className="py-2 inline-block" key={indexTags}>
-								<button className="mx-2 py-2 px-3 bg-slate-600 rounded-2xl font-medium text-white">
+								<button className="mx-2 py-2 px-3 bg-slate-600 rounded-xl font-medium text-white">
 									{postTags}
 								</button>
 							</li>
@@ -39,33 +49,28 @@ export default function Blog({ post }) {
 							/>
 						</div>
 						<div className="justify-start my-auto p-4">
-							<h4 className="text-lg font-medium">{post.author.name}</h4>
-							<h5 className="font-light">Posted at {formattedDate}Indonesia</h5>
+							<h4 className="text-xl font-semibold">{post.author.name}</h4>
+							<h5 className="font-light">
+								Posted at {createdAtFormat}, Indonesia
+							</h5>
+							<h5 className="font-medium">
+								Post updated at {updatedAtFormat}, Indonesia
+							</h5>
 						</div>
 					</div>
 
-					<div className="w-36 h-36 relative mx-auto">
+					<div className="w-80 h-80 relative mx-auto">
 						<Image
 							src={post.coverImage.url}
 							layout="fill"
 							objectFit="contain"
+							alt="Cover image of post"
 						/>
 					</div>
 
-					<ReactMarkdown>{post.content.markdown}</ReactMarkdown>
+					<CodeHighlight content={post.content.markdown} />
 				</div>
 			</div>
-			<style jsx global>{`
-				h3 {
-					font-size: 30px;
-					font-weight: 600;
-				}
-				p {
-					margin-top: 16px;
-					margin-bottom: 16px;
-					line-height: 1rem;
-				}
-			`}</style>
 		</Layout>
 	);
 }
@@ -81,6 +86,7 @@ export async function getStaticProps({ params: { slug } }) {
 				title
 				createdAt
 				publishedAt
+				updatedAt
 				slug
 				tags
 				excerpt

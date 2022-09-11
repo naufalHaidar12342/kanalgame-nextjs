@@ -29,8 +29,8 @@ export default function Home({ posts }) {
 							</p>
 						</div>
 					</div>
-					<div className="rounded-2xl flex py-6 shadow-lg max-w-xl mt-6">
-						<div className="px-5 my-auto">
+					<div className="rounded-2xl flex py-6 shadow-lg max-w-xl mt-6 mx-auto">
+						<div className="px-5 my-auto w-full">
 							<Suspense fallback={"Loading today date in Indonesia..."}>
 								<DynamicTodayDate />
 							</Suspense>

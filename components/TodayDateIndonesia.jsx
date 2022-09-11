@@ -13,7 +13,7 @@ export default function TodayDateIndonesia() {
 		};
 	}, []);
 	return (
-		<p>
+		<p className="w-full">
 			<FcClock className="inline-block w-8 h-8 mx-2" />
 			Today is{" "}
 			{format(todayDateIndonesia, todayDatePattern, {
